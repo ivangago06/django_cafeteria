@@ -1,0 +1,32 @@
+{% extends 'cafeteria_app/base.html' %}
+
+{% load static %}
+
+{% block title %}Cafeteria{% endblock %}
+
+{% block headers %}
+
+<div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title">Acerca De</h1>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body" style="text-align: justify;">
+        <p>En Café delicius, hemos creado un espacio en línea pensado especialmente para los amantes del café y de los momentos especiales que se viven alrededor de una taza humeante. Sumérgete en el aroma inconfundible de nuestros granos de café cuidadosamente seleccionados y deja que te guiemos en un viaje sensorial que despertará tus sentidos.</p>
+
+        <p>Nuestra pasión por el café es la esencia de todo lo que hacemos. Desde el primer momento en que entras en nuestra web, serás recibido por la calidez y el encanto que caracteriza a Café delicius. Descubrirás un sitio pensado para disfrutar y relajarte mientras navegas por nuestros deliciosos productos y servicios.</p>
+        
+        Gracias por visitarnos, ¡te esperamos con los brazos abiertos y una taza de café humeante en Café delicius!
+    </div>
+  </div>
+  
+  <div class="container-fluid mt-3">
+    <img src="{% static 'images/acerca.jfif' %}" class="img-fluid d-block" width="200">
+    <p>Para nostros es importante contarte <kbd>ACERCA DE</kbd> nosotros ya que el cliente es nuestra prioridad.</p>
+    <button class="btn btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+      Para más detalle de click aquí
+    </button>
+  </div>
+      
+
+{% endblock %}

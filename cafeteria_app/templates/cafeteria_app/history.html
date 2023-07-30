@@ -1,0 +1,32 @@
+{% extends 'cafeteria_app/base.html' %}
+
+{% load static %}
+
+{% block title %}Cafeteria{% endblock %}
+
+{% block headers %}
+
+<div class="container mt-3">
+    <h2>History</h2>
+    <p>Image at the top:</p>
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="{% static 'images/p1.png' %}" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">John Doe</h4>
+        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>        
+      </div>
+    </div>
+    <br>
+    
+    <p>Image at the bottom:</p>
+    <div class="card" style="width:400px">
+      <div class="card-body">
+        <h4 class="card-title">Jane Doe</h4>
+        <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>        
+      </div>
+      <img class="card-img-bottom" src="{% static 'images/p2.png' %}" alt="Card image" style="width:100%">
+    </div>
+  </div>
+  
+
+{% endblock %}

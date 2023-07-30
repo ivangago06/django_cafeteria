@@ -1,0 +1,28 @@
+{% extends 'cafeteria_app/base.html' %}
+
+{% load static %}
+
+{% block title %}Aplicacion{% endblock %}
+
+
+{% block headers %}
+    <h1>Aplicaciones</h1>
+    <hr/>
+    {% block content %}
+        {% for project in projects %}
+            <div class="row project">
+                <div class="col-lg-3 col-md-4 offset-lg-1">
+                    <img class="img-fluid" src="{{project.image}}" alt="">
+                </div>
+                <div class="col-lg-7 col-md-8">
+                    <h2 class="section-heading title">{{project.title}}</h2>   
+                    <p>{{project.description}}</p>
+                    {% if project.link %}
+                        <p><a href="{{project.link}}">Más información</a></p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% endblock %}
+
+{% endblock %}
