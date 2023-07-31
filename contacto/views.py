@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.mail import EmailMessage
 from .forms import ContactoForm
+from cafeteria.settings import *
 
 
 def contacto(request):
@@ -10,16 +11,20 @@ def contacto(request):
     if request.method == "POST":
         contact_form = ContactoForm(data=request.POST)
         if contact_form.is_valid():
-            name = request.POST.get('name', '')
-            email = request.POST.get('email', '')
-            content = request.POST.get('content', '')
+
+            context = {
+                'name' : request.POST.get('name', ''),
+                'email' : request.POST.get('email', ''),
+                'message' : request.POST.get('content', ''),
+            }
 
             # Creamos el correo
             email = EmailMessage(
-                "La Caffettiera: Nuevo mensaje de contacto",
-                "De {} <{}>\n\nEscribió:\n\n{}".format(name, email, content),
-                "ivangago06@gmail.com",
-                reply_to=[email]
+                subject = 'Cafeteria',
+                body = context['message'],
+                from_email = EMAIL_HOST_USER,
+                to = ['gerardo.garcia@c3ntro.com'],
+                #headers = {'reply-to':email}
             )
 
             # Lo enviamos y redireccionamos

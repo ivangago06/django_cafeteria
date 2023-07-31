@@ -125,8 +125,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Configuración SMTP
-EMAIL_HOST = 'smtp-relay.gmail.com.'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ivangago06@gmail.com'
 EMAIL_HOST_PASSWORD = 'ymwwaslilnipcltl'
-EMAIL_PORT = '587'
-#EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
